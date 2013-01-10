@@ -1,6 +1,10 @@
 Ideas
   - snippets for Package, Import, Extends and Class
   - Class namespace auto-complete,  or code completion plugin
+    - get the directory of the current file (it has to be saved)
+    - parse the string for /com/ and strip everything before it and until the last slash
+    - replace slashes with strings
+    - run command on 
   - Class reference verification plugin
 
 API Reference
