@@ -1,0 +1,6 @@
+<snippet>
+    <content><![CDATA[Package("${1}");]]></content>
+    <tabTrigger>pack</tabTrigger>
+    <scope>source.js</scope>
+    <description>Package</description>
+</snippet>
