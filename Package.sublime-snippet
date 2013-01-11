@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[Package("${1}");]]></content>
-    <tabTrigger>pack</tabTrigger>
+    <tabTrigger>package</tabTrigger>
     <scope>source.js</scope>
     <description>Package</description>
 </snippet>

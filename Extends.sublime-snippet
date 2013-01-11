@@ -1,6 +1,6 @@
 <snippet>
     <content><![CDATA[Extends("${1:$SELECTION}");]]></content>
-    <tabTrigger>ext</tabTrigger>
+    <tabTrigger>extends</tabTrigger>
     <scope>source.js</scope>
     <description>Extends</description>
 </snippet>
