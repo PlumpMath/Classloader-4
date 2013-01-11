@@ -6,23 +6,43 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
   """Looks through folders starting from a 'com' folder to find namespaces and classes for Classloader code"""
   
   def __init__(self): 
+    # get a view from the window
     self.view = sublime.active_window().active_view()
 
-    self.getNamespaces()
-    self.getClasses()
-
   def needsCompletion(self):
+    location = self.view.sel()[0] 
+
     for region in self.view.sel():
       line = self.view.line(region)
       line_contents = self.view.substr(line)
 
-      return (line_contents.find("Package") != -1)
+      content = sublime.Region(0,self.view.size())
+      lines = self.view.split_by_newlines(content)
+
+      # search for package
+      completionNeeded = (line_contents.find("Package") != -1);
+
+      # search for Import, Extends, and com. on this line and the preceding line
+      i = 0;
+      for line in lines:
+        if line.contains(location):
+          for region in [line, lines[i - 1]]:
+            if self.view.substr(region).find("Import") != -1:
+              completionNeeded = True
+            elif self.view.substr(region).find("Extends") != -1:
+              completionNeeded = True  
+            elif self.view.substr(region).find("\"com.") != -1:
+              completionNeeded = True  
+        i = i + 1
+
+      return completionNeeded
 
   def writingPackage(self):
     for region in self.view.sel():
       line = self.view.line(region)
       line_contents = self.view.substr(line)
 
+      # if 'Package' is on the line
       return (line_contents.find("Package") != -1)
 
   def getNamespaces(self):
@@ -48,6 +68,7 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
   def getList(self, root, includeFiles):
     matches = []
     if (root):
+      # return either a list of files or of folders
       for root, dirnames, filenames in os.walk(root):        
         if (includeFiles):
           for filename in fnmatch.filter(filenames, '*.js'):
@@ -60,11 +81,13 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
 
   def convertPath(self, path):
     returnvalue = "";
+    # find the path after "/com/"
     if (path.find(".js") != -1):
       returnvalue = path[path.find("/com/")+1:path.find(".js")]
     else:
       returnvalue = path[path.find("/com/")+1:]
 
+    # convert slashes  
     return returnvalue.replace("/", ".")
 
 
@@ -86,11 +109,14 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
     return package
 
   def on_query_completions(self, view, prefix, locations):
+    # update view
     self.view = view
 
+    # do not run the calculations unless we are on certain lines
     if(not self.needsCompletion()):
       return False
 
+    # package results are namespace, otherwise show complete classes
     if(self.writingPackage()):
       sugs = self.getNamespaces()
     else:
