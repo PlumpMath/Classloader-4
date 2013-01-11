@@ -5,6 +5,9 @@ Ideas
     - parse the string for /com/ and strip everything before it and until the last slash
     - replace slashes with strings
   - Class reference verification plugin
+  - If you can parse Javascript, you can show methods on classes 
+  - You can add a call to node.js to build it, and verify code integrity
+    - You'll need a settings file, to denote the main class
 
 API Reference
 - http://www.sublimetext.com/docs/2/api_reference.html
