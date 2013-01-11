@@ -8,7 +8,9 @@ Ideas
   - Class reference verification plugin
 
 API Reference
-http://www.sublimetext.com/docs/2/api_reference.html
+- http://www.sublimetext.com/docs/2/api_reference.html
+- http://docs.sublimetext.info/en/latest/
+
 
 Tutorial
 http://net.tutsplus.com/tutorials/python-tutorials/how-to-create-a-sublime-text-2-plugin/
