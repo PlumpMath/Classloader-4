@@ -1,6 +1,6 @@
 import sublime, sublime_plugin
 
-class ClassloaderClassCompletionCommand(sublime_plugin.TextCommand):
+class ClassloaderPackageCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     
     namespace = self.getNamespace()
