@@ -11,6 +11,13 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
     self.getNamespaces()
     self.getClasses()
 
+  def needsCompletion(self):
+    for region in self.view.sel():
+      line = self.view.line(region)
+      line_contents = self.view.substr(line)
+
+      return (line_contents.find("Package") != -1)
+
   def writingPackage(self):
     for region in self.view.sel():
       line = self.view.line(region)
@@ -80,7 +87,9 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
 
   def on_query_completions(self, view, prefix, locations):
     self.view = view
-    #self.getNamespaces()
+
+    if(not self.needsCompletion()):
+      return False
 
     if(self.writingPackage()):
       sugs = self.getNamespaces()
