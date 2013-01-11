@@ -4,10 +4,12 @@ class ClassloaderClassCompletionCommand(sublime_plugin.TextCommand):
   def run(self, edit):
     
     namespace = self.getNamespace()
-    if (!namespace):
+
+    if (not namespace):
       return
 
-    sels = self.view.sel()  
+    print(namespace)
+
     for region in self.view.sel():
       if region.empty():
         line = self.view.line(region)
@@ -15,16 +17,22 @@ class ClassloaderClassCompletionCommand(sublime_plugin.TextCommand):
         line_contents = self.view.substr(line)
 
         if (line_contents.find("Package") != -1):
-          print(region, "insert ", packagename, "in selection")
-          self.view.insert(edit, 9, packagename)
+          self.view.replace(edit, region, namespace)
+
+  def is_enabled(self):
+    return self.view != None
 
   def getNamespace(self):
     filename = self.view.file_name()
+
+    # on Windows paths contains backward slashes
+    filename = filename.replace("\\", "/")
 
     # start and end index
     comindex = filename.find('/com/')
     lastslashindex = filename.rfind("/")
 
+    print(filename, comindex)
     if (comindex == -1):
       return False
 
@@ -36,4 +44,4 @@ class ClassloaderClassCompletionCommand(sublime_plugin.TextCommand):
 
 
   def description(self):
-    return "A description"
+    return "Classloader: Insert package namespace "
