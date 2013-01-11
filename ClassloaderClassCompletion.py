@@ -16,17 +16,20 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
       line = self.view.line(region)
       line_contents = self.view.substr(line)
 
+      # get all the contents of the file
       content = sublime.Region(0,self.view.size())
+
+      # get all the lines
       lines = self.view.split_by_newlines(content)
 
       # search for package
       completionNeeded = (line_contents.find("Package") != -1);
 
-      # search for Import, Extends, and com. on this line and the preceding line
+      # search for Import, Extends, and com. 
       i = 0;
       for line in lines:
-        if line.contains(location):
-          for region in [line, lines[i - 1]]:
+        if line.contains(location): # on this line
+          for region in [line, lines[i - 1]]: # and the preceding line
             if self.view.substr(region).find("Import") != -1:
               completionNeeded = True
             elif self.view.substr(region).find("Extends") != -1:
