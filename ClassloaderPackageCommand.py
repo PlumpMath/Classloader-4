@@ -8,8 +8,6 @@ class ClassloaderPackageCommand(sublime_plugin.TextCommand):
     if (not namespace):
       return
 
-    print(namespace)
-
     for region in self.view.sel():
       if region.empty():
         line = self.view.line(region)
