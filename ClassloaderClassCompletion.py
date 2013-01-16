@@ -9,6 +9,8 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
     # get a view from the window
     self.view = sublime.active_window().active_view()
 
+    self.debug = False;
+
   def needsCompletion(self):
     location = self.view.sel()[0] 
 
@@ -30,6 +32,8 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
       for line in lines:
         if line.contains(location): # on this line
           for region in [line, lines[i - 1]]: # and the preceding line
+            if (self.debug):
+              print(self.view.substr(region))
             if self.view.substr(region).find("Import") != -1:
               completionNeeded = True
             elif self.view.substr(region).find("Extends") != -1:
@@ -37,6 +41,9 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
             elif self.view.substr(region).find("\"com.") != -1:
               completionNeeded = True  
         i = i + 1
+
+      if (self.debug):
+        print("completion needed: ", completionNeeded)
 
       return completionNeeded
 
@@ -125,4 +132,8 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
     else:
       sugs = self.getClasses()
     
+    if (self.debug):
+      print("suggestions: ", sugs)
+
+
     return sugs
