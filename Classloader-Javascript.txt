@@ -9,6 +9,8 @@ Ideas
   - You can add a call to node.js to build it, and verify code integrity
     - You'll need a settings file, to denote the main class
   - A command for writing a testcase script for the current class
+  - refactor command
+  - snippet command
 
 API Reference
 - http://www.sublimetext.com/docs/2/api_reference.html
