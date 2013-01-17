@@ -1,5 +1,10 @@
 [
-    {   "caption": "Classloader: Package",
-        "command": "classloader_package"
+    {   
+      "caption": "Classloader: Package",
+      "command": "classloader_package"
+    },
+    {   
+      "caption": "Prompt: Open Shell",
+      "command": "prompt"
     }
 ]

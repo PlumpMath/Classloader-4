@@ -1,5 +1,8 @@
 [
   {
     "keys": ["ctrl+shift+c"], "command": "classloader_package"
+  },
+  {
+    "keys": ["ctrl+alt+s"], "command": "prompt"
   }
 ]
