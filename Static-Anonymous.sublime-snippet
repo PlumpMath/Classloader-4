@@ -1,0 +1,9 @@
+<snippet>
+    <content><![CDATA[Static, function () 
+{
+  ${0:// body...}
+}]]></content>
+    <tabTrigger>static anonymous</tabTrigger>
+    <scope>source.js</scope>
+    <description>Static</description>
+</snippet>
