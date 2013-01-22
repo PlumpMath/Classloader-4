@@ -4,6 +4,10 @@
       "command": "classloader_package"
     },
     {   
+      "caption": "Sublime: Create Snippet",
+      "command": "create_snippet"
+    },
+    {   
       "caption": "Prompt: Open Shell",
       "command": "prompt"
     }

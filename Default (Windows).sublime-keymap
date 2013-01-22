@@ -3,6 +3,9 @@
     "keys": ["ctrl+shift+c"], "command": "classloader_package"
   },
   {
+    "keys": ["ctrl+alt+i"], "command": "create_snippet"
+  },
+  {
     "keys": ["ctrl+alt+s"], "command": "prompt"
   }
 ]
