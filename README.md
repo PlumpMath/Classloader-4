@@ -3,13 +3,6 @@ Classloader
 
 Sublime Text 2 snippets and plugins for writing Classloader code and a few other commands that I find useful.
 
-##Snippets:
-- Class
-- Extends
-- Import
-- Package
-- Static function
-
 ##Commands:
 
 ###ClassloaderPackageCommand
