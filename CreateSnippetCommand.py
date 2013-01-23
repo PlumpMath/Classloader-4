@@ -88,4 +88,4 @@ class CreateSnippetCommand(sublime_plugin.TextCommand):
     return self.view != None
 
   def description(self):
-    return "Sublime: Create Snippet from selection"
+    return "Snippet: Create Snippet from selection"
