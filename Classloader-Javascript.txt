@@ -10,7 +10,8 @@ Ideas
     - You'll need a settings file, to denote the main class
   - A command for writing a testcase script for the current class
   - refactor command
-    - rewrite the package statement, class name, and any references to it in other files to the files current class name and package location.
+    - prompt to (rename, and) move the file to a new location
+    - rewrite the package statement, (class name, ) and any references to it in other files in the current 
   - snippet command
     - select some text and create a snippet out of it.
 
