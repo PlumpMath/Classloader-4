@@ -1,7 +1,7 @@
 import sublime, sublime_plugin
 import os
 
-class ClassloaderRefactorCommand(sublime_plugin.TextCommand):
+class ClassloaderMoveClassCommand(sublime_plugin.TextCommand):
 
   def run(self, edit):
 

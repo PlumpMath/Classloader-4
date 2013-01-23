@@ -8,8 +8,8 @@ Sublime Text 2 snippets and plugins for writing Classloader code and a few other
 ###ClassloaderPackageCommand
 Fills out the package namespace when on the "Package" line of a (saved) file.
 
-###ClassLoaderRefactorCommand 
-Takes selected text to create a new snippet and asks your for a package to save the file to.
+###ClassloaderMoveClassCommand 
+Move and/or a class and fix all references that other classes have to it.
 
 ###CreateSnippetCommand 
 Takes selected text to create a new snippet and asks your for a package to save the file to.
