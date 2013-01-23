@@ -30,7 +30,6 @@ class ClassloaderPackageCommand(sublime_plugin.TextCommand):
     comindex = filename.find('/com/')
     lastslashindex = filename.rfind("/")
 
-    print(filename, comindex)
     if (comindex == -1):
       return False
 
