@@ -23,6 +23,10 @@ class ClassloaderPackageCommand(sublime_plugin.TextCommand):
   def getNamespace(self):
     filename = self.view.file_name()
 
+    # if not filename:
+    #   self.view.window().show_input_panel("Please provide a fully qualified namespace", "", self.is_enabled, self.is_enabled, self.is_enabled)
+
+
     # on Windows paths contains backward slashes
     filename = filename.replace("\\", "/")
 
