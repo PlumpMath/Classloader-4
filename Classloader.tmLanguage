@@ -585,7 +585,7 @@
     </dict>
     <dict>
       <key>match</key>
-      <string>\b(Extends|Import|Class|Singleton|Package|XMLResource|CSSResource)\b</string>
+      <string>\b(Extends|Import|Class|Singleton|Package|XMLResource|CSSResource|Static)\b</string>
       <key>comment</key>
       <string>Match some Classloader keywords</string>
       <key>name</key>
