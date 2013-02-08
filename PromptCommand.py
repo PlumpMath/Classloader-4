@@ -1,25 +1,25 @@
 import sublime, sublime_plugin
 import os
+import sys
+import subprocess
 
 class PromptCommand(sublime_plugin.ApplicationCommand):
   
   WINDOWS = "windows"
-  MAC     = "mac?"
+  MAC     = "darwin"
 
-  def run(self):
+  def ru n(self):
 
     # get location of current file
     location = self.getLocation()
 
     # go to location
     os.chdir(location)
-
-    # print(os.environ["OS"])
-
-    if (os.environ["OS"].lower().find(self.WINDOWS) != -1):
+ 
+    if ("OS" in os.environ and os.environ["OS"].lower().find(self.WINDOWS) != -1):
       os.system("C:\Windows\System32\cmd.exe")
-    elif (False):
-      os.system("gnome-terminal")
+    elif (sys.platform == self.MAC):
+      subprocess.call(["/usr/bin/open -a Terminal ."], shell=True)
     else:
       sublime.status_message("PromptCommand could not run since it does not know what terminal to use on this os.")
 
