@@ -8,7 +8,7 @@ class PromptCommand(sublime_plugin.ApplicationCommand):
   WINDOWS = "windows"
   MAC     = "darwin"
 
-  def ru n(self):
+  def run(self):
 
     # get location of current file
     location = self.getLocation()
