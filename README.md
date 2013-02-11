@@ -14,6 +14,9 @@ Move and/or a class and fix all references that other classes have to it.
 ###CreateSnippetCommand 
 Takes selected text to create a new snippet and asks your for a package to save the file to.
 
+###PromptCommand
+Opens up shell command prompt. Easy if you want to do something with a file on the command line.
+
 ##Code Completion:
 
 ###ClassloaderClassCompletion 
