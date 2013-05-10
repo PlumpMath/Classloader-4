@@ -22,6 +22,8 @@ Opens up shell command prompt. Easy if you want to do something with a file on t
 ###ClassloaderClassCompletion 
 Suggests namespaces and classes for "Package" lines, "Import" and "Extends". The code understand when Import and Extends statements run over multiple lines.
 
+_Issue:_For some reasons the file needs to be touched/reloaded before it works.
+
 ##Snippets
 
 ###Package, Extends and Import
