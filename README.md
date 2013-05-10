@@ -1,9 +1,10 @@
 Classloader
 ===========
 
-Sublime Text 2 snippets and plugins for writing Classloader code and a few other commands that I find useful.
+Sublime Text 2 commands, snippets and plugins for writing Classloader JavaScript code and a few other commands that I find convenient.
 
 ##Commands:
+I've added some commands to Sublime, some with shortcuts.
 
 ###ClassloaderPackageCommand
 Fills out the package namespace when on the "Package" line of a (saved) file.
@@ -17,12 +18,12 @@ Takes selected text to create a new snippet and asks your for a package to save 
 ###PromptCommand
 Opens up shell command prompt. Easy if you want to do something with a file on the command line.
 
+
+
 ##Code Completion:
 
 ###ClassloaderClassCompletion 
 Suggests namespaces and classes for "Package" lines, "Import" and "Extends". The code understand when Import and Extends statements run over multiple lines.
-
-_Issue:_For some reasons the file needs to be touched/reloaded before it works.
 
 ##Snippets
 
@@ -34,3 +35,6 @@ Take the filename as the Class name, and writes out the constructor.
 
 ###Static and Static Anonymous
 Writes out 'static' methods for a class
+
+##Theme
+The package included my prefered theme, modified with my preferences.
