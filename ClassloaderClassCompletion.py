@@ -1,15 +1,17 @@
 import sublime, sublime_plugin
 import os
 import fnmatch
+#import codecs
 
 class ClassloaderClassCompletion(sublime_plugin.EventListener):
   """Looks through folders starting from a 'com' folder to find namespaces and classes for Classloader code"""
   
   def __init__(self): 
-    # get a view from the window
-    self.view = sublime.active_window().active_view()
-
     self.debug = False;
+
+  # def on_activated(self, view):
+  #   # get a view from the window
+  #   self.view = sublime.active_window().active_view()
 
   def needsCompletion(self):
     location = self.view.sel()[0] 
@@ -30,6 +32,7 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
       # search for Import, Extends, and com. 
       i = 0;
       for line in lines:
+        # maybe some need to strip BOM: content = unicode(q.content.strip(codecs.BOM_UTF8), 'utf-8')
         if line.contains(location): # on this line
           for region in [line, lines[i - 1]]: # and the preceding line
             if (self.debug):
