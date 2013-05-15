@@ -9,10 +9,6 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
 	def __init__(self): 
 		self.debug = False;
 
-	# def on_activated(self, view):
-	#   # get a view from the window
-	#   self.view = sublime.active_window().active_view()
-
 	def needsCompletion(self):
 		location = self.view.sel()[0] 
 
