@@ -18,6 +18,9 @@ Takes selected text to create a new snippet and asks your for a package to save 
 ###PromptCommand
 Opens up shell command prompt. Easy if you want to do something with a file on the command line.
 
+###MarkedCommand
+Opens up the file in Marked, as long as the file is a MarkDown file and as long as Marked is available. Currently only works on OS-X, since I don't try to see if I can get it to work on another OS.
+
 
 
 ##Code Completion:
