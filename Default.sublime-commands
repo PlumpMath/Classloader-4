@@ -10,5 +10,9 @@
     {   
       "caption": "Prompt: Open Shell",
       "command": "prompt"
+    },
+    {   
+      "caption": "Marked: Open file with Marked",
+      "command": "marked"
     }
 ]
