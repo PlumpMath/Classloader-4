@@ -1,7 +1,6 @@
 import sublime, sublime_plugin
 import os
 import fnmatch
-#import codecs
 
 class ClassloaderClassCompletion(sublime_plugin.EventListener):
 	"""Looks through folders starting from a 'com' folder to find namespaces and classes for Classloader code"""
