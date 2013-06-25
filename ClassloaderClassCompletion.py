@@ -59,7 +59,7 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
 		namespaces = []
 		for path in self.getList(root, False):
 			path = self.convertPath(path)
-			namespaces.append((path, path))
+			namespaces.append(path)
 
 		return namespaces
 
@@ -67,18 +67,21 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
 		root = self.getComFolder();
 
 		classes = []
+		for index, item in enumerate(self.getList(root, True)):
+			print index, item
+
 		for path in self.getList(root, True):
 			path = self.convertPath(path)
-			classes.append((path, path))
+			classes.append(path)
 
 		return classes
 
-	def getList(self, root, includeFiles):
+	def getList(self, root, filesOnly):
 		matches = []
 		if (root):
 			# return either a list of files or of folders
 			for root, dirnames, filenames in os.walk(root):        
-				if (includeFiles):
+				if (filesOnly):
 					for filename in fnmatch.filter(filenames, '*.js'):
 						matches.append(os.path.join(root, filename).replace("\\", "/"))
 				else:
