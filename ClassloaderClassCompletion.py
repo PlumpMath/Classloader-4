@@ -67,8 +67,6 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
 		root = self.getComFolder();
 
 		classes = []
-		for index, item in enumerate(self.getList(root, True)):
-			print index, item
 
 		for path in self.getList(root, True):
 			path = self.convertPath(path)
