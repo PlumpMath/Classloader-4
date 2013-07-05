@@ -10,5 +10,8 @@
   },
   {
     "keys": ["ctrl+alt+m"], "command": "marked"
+  },
+  {
+    "keys": ["ctrl+alt+c"], "command": "check"
   }
 ]

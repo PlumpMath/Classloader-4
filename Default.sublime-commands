@@ -14,5 +14,9 @@
     {   
       "caption": "Marked: Open file with Marked",
       "command": "marked"
+    },
+    {   
+      "caption": "Check: Insert a ✓ to check something...",
+      "command": "check"
     }
 ]
