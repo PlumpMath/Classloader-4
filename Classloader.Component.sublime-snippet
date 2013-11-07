@@ -1,0 +1,19 @@
+<snippet>
+    <content><![CDATA[Package("${1:}");
+
+Extends("${2:}");
+
+XMLResource("${3:${TM_FILENAME/(.+)\..+|.*/$1/:name}}.template.xml");
+CSSResource("${3:${TM_FILENAME/(.+)\..+|.*/$1/:name}}.css");
+
+Class
+(
+  function ${3:${TM_FILENAME/(.+)\..+|.*/$1/:name}}(${4:parentScope})
+  {
+    this.${5:Component}(${4:parentScope});
+  }
+)]]></content>
+    <tabTrigger>component</tabTrigger>
+    <scope>source.js</scope>
+    <description>Component</description>
+</snippet>
