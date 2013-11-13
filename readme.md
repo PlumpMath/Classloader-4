@@ -36,6 +36,9 @@ Very simple single line statements. It's just a little quicker.
 ###Class
 Take the filename as the Class name, and writes out the constructor.
 
+###Component, Command, Query
+Take the filename as the Class name, and writes out extends statement, resource statements and the constructor, and sometimes the main method of the class.
+
 ###Static and Static Anonymous
 Writes out 'static' methods for a class
 

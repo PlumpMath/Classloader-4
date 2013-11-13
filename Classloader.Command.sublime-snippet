@@ -7,7 +7,7 @@ Class
 (
   function ${3:${TM_FILENAME/(.+)\..+|.*/$1/:name}}(${4:scope})
   {
-    this.${5:Command}();
+    this.${5:Command}("${3:${TM_FILENAME/(.+)\..+|.*/$1/:name}}");
   },
 
   function execute (scope) 
