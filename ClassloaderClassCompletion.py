@@ -99,7 +99,6 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
 		# convert slashes
 		return returnvalue.replace("/", ".")
 
-
 	def getComFolder(self):
 		filename = self.view.file_name()
 
@@ -133,6 +132,5 @@ class ClassloaderClassCompletion(sublime_plugin.EventListener):
 
 		if (self.debug):
 			print("suggestions: ", sugs)
-
 
 		return sugs

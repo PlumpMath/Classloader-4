@@ -7,7 +7,7 @@ class CheckCommand(sublime_plugin.TextCommand):
       if region.empty():
         line = self.view.line(region)
 
-      self.view.insert(edit, region.begin(), chr(10003)) 
+      self.view.insert(edit, region.begin(), chr(10003))
 
   def is_enabled(self):
     return self.view != None

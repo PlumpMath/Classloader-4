@@ -16,7 +16,6 @@ class MarkedCommand(sublime_plugin.ApplicationCommand):
 
     if filename:
       if (sys.platform == self.MAC):
-        print (filename)
         subprocess.call(["/usr/bin/open -a Marked " + filename], shell=True)
       else:
         sublime.status_message("MarkedCommand could not run because Marked is not known on this OS.")
