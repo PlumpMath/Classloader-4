@@ -1,14 +1,22 @@
 [
-    {   
+    {
       "caption": "Classloader: Package",
       "command": "classloader_package"
     },
-    {   
+    {
       "caption": "Sublime: Create Snippet",
       "command": "create_snippet"
     },
-    {   
+    {
       "caption": "Prompt: Open Shell",
       "command": "prompt"
+    },
+    {
+      "caption": "Marked: Open file with Marked",
+      "command": "marked"
+    },
+    {
+      "caption": "Check: Insert a ✓ to check something...",
+      "command": "check"
     }
 ]

@@ -7,5 +7,11 @@
   },
   {
     "keys": ["ctrl+alt+s"], "command": "prompt"
+  },
+  {
+    "keys": ["ctrl+alt+m"], "command": "marked"
+  },
+  {
+    "keys": ["ctrl+alt+c"], "command": "check"
   }
 ]

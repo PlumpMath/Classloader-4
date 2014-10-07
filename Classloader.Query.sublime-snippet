@@ -1,0 +1,25 @@
+<snippet>
+    <content><![CDATA[Package("${1:}");
+
+Extends("${2:}");
+
+Class
+(
+  function ${3:${TM_FILENAME/(.+)\..+|.*/$1/:name}}()
+  {
+    this.Query("${3:${TM_FILENAME/(.+)\..+|.*/$1/:name}}");
+  },
+
+  function calculate (scope) 
+  {
+    this.startQueryResults();
+
+    ${4:}
+
+    return this.getQueryResults();    
+  }
+)]]></content>
+    <tabTrigger>query</tabTrigger>
+    <scope>source.js</scope>
+    <description>Query</description>
+</snippet>

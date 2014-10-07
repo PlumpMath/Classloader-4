@@ -77,7 +77,7 @@ class CreateSnippetCommand(sublime_plugin.TextCommand):
   def choosePackage(self, index):
 
     if index != -1:
-      self.snippet_filename = os.path.join(self.path, self.packageList[index], self.firstword + ".sublime_snippet")
+      self.snippet_filename = os.path.join(self.path, self.packageList[index], self.firstword + ".sublime-snippet")
       self.view.retarget(self.snippet_filename)
       if self.saveOnCreate:
          self.saveSnippet()

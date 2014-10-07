@@ -1,0 +1,23 @@
+<snippet>
+    <content><![CDATA[Package("${1:}");
+
+Extends("${2:}");
+
+Class
+(
+  function ${3:${TM_FILENAME/(.+)\..+|.*/$1/:name}}(${4:scope})
+  {
+    this.${5:Command}("${3:${TM_FILENAME/(.+)\..+|.*/$1/:name}}");
+  },
+
+  function execute (scope) 
+  {
+    
+  }
+)]]></content>
+    <tabTrigger>command</tabTrigger>
+    <scope>source.js</scope>
+    <description>Command</description>
+</snippet>
+
+
