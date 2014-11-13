@@ -13,5 +13,17 @@
   },
   {
     "keys": ["ctrl+alt+c"], "command": "check"
+  },
+  {
+    "keys": ["command+shift+i"], "command": "reindent"
+  },
+  {
+    "keys": ["command+shift+r"], "command": "refresh_folder_list"
+  },
+  {
+    "keys": ["command+alt+r"], "command": "rename_file", "args": {"paths": ["$file"]}
+  },
+  {
+    "keys": ["command+alt+o"], "command": "open_dir", "args": {"dir": "$file_path", "file": "$file_name"}
   }
 ]
