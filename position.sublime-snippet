@@ -1,0 +1,17 @@
+<snippet>
+  <content><![CDATA[function position(x, y, doc) {
+  var div = doc.creatEelement('div');
+
+  div.setAttribute('style', 'position:fixed; z-index: 999999999999; width: 3px; height: 3px; border: solid 1px red;');
+
+  div.style.top = y + 'px';
+  div.style.left = x + 'px';
+
+  doc.body.appendChild(div);
+
+  return div;
+}]]></content>
+  <tabTrigger>position</tabTrigger>
+  <scope>source.js</scope>
+  <description>Render position div function</description>
+</snippet>

@@ -15,6 +15,9 @@
     "keys": ["ctrl+alt+c"], "command": "check"
   },
   {
+    "keys": ["ctrl+alt+x"], "command": "cross"
+  },
+  {
     "keys": ["command+shift+i"], "command": "reindent"
   },
   {

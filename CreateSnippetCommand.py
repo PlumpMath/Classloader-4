@@ -22,9 +22,7 @@ class CreateSnippetCommand(sublime_plugin.TextCommand):
     self.newSnippet()
 
     # insert the string
-    edit = self.view.begin_edit()
     self.view.insert(edit, 0, snippet)
-    self.view.end_edit(edit)
 
     # position the cursor to edit the content of the 
 
@@ -44,10 +42,14 @@ class CreateSnippetCommand(sublime_plugin.TextCommand):
 
   def getInfo(self):
     file = self.view.file_name()
-    self.ext = file[file.rfind(".") + 1:]
+    if file:
+      self.ext = file[file.rfind(".") + 1:]
+    else:
+      self.ext = ''
     self.firstword = self.content[0:self.content.find(" ")]
     if self.content.find(" ") == -1:
       self.firstword = self.content
+
 
   def getSnippet(self):
     return "<snippet>\n\t<content><![CDATA[" + self.content.lower() + "]]></content>\n\t<tabTrigger>" + self.firstword.lower() + "</tabTrigger>\n\t<scope>source." + self.ext+ "</scope>\n\t<description>" + self.firstword[0:1].upper() + self.firstword[1:].lower() + "</description>\n</snippet>"
